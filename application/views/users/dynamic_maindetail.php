@@ -185,7 +185,6 @@
                                 if(res.status == 'ok'){
                                     alert('Berhasil diproses');
                                         location.href = "<?php echo base_url();?>main";
-                                    }, 1);
                                 }
                     },
                     error : function(result){
