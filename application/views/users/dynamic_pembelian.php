@@ -29,8 +29,9 @@
                                 <tbody>
                                     <?php if(isset($pembelian)) {
                                         
+                                        $i = 0;
                                         foreach($pembelian as $list) { 
-                                                $i = 1;
+                                                $i++;
                                                 ?>
                                                 <tr>    
                                                     <td><?php echo $i; ?></td>
@@ -47,7 +48,8 @@
                                                     ?></td>
                                                 </tr>
                                                 
-                                        <?php $i++;}
+                                        <?php 
+                                        ;}
 
                                     }?>
                                 </tbody>
