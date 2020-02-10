@@ -48,7 +48,7 @@ class Pembelian extends CI_Controller {
 
 
 	public function daftar_admin(){
-		$query = "SELECT * FROM produk a, pembelian b where a.id = b.produk_id and b.user_id = $user_id";
+		$query = "SELECT * FROM produk a;";
 		$result = $this->db->query($query)->result();
 		$data['pembelian'] = $result;
  		$this->load->view('admin/static_header', $data);
