@@ -31,7 +31,7 @@
           ?>
               <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                  <img class="card-img-top" src="<?php echo base_url()?>assets/images.jpeg" alt="Card image cap">
+                  <img class="card-img-top" src="<?php echo base_url()?>assets/produk/rumah.png" alt="Card image cap">
                   <div class="card-body">
                     <p class="card-text" style="font-weight:bold;font-size:24px;color:#999"><?php echo $item->nama?></p>
                     <span class="" style="font-weight:bold;font-size:17px;position:relative;top:-16px;"><?php 
