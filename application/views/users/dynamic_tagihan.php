@@ -25,6 +25,7 @@
                                     <th>Produk Id</th>
                                     <th>Pembayaran</th>
                                     <th>Status</th>
+                                    <th>Upload bukti</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($tagihan)) {
@@ -81,7 +82,7 @@
                                                     <td><?php echo $list->pembayaran_perbulan; ?></td>
                                                     <td><?php 
                                                         if($list->status == "belum"){
-                                                            ?>  
+                                                            ?>
                                                                 <span style="color:#f0134d;"><b>Belum Dibayar</b></span>
                                                             <?php
                                                         }else{
@@ -90,6 +91,11 @@
                                                             <?php
                                                         }
                                                     ?></td>
+                                                    <td>
+                                                        <?php echo form_open_multipart('produk/add'); ?>
+                                                            <input type="file" id="upload_bukti_<?php echo $i;?>">
+                                                        <?php echo form_close();?>
+                                                    </td>
                                                 </tr>
                                                 
                                         <?php }

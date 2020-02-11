@@ -82,6 +82,25 @@ class Tagihan extends CI_Controller {
 		if($affect_row > 0){
 			echo 'ok';
 		}else{
+
+		}
+	}
+
+
+	public function update_admin2(){
+		$id = $this->input->post('id');
+		$status = $this->input->post('status');
+		$user_id = $this->input->post('user_id');
+		$data = array(
+            'status' => 'belum',
+		);
+		$this->db->where('id', $id);
+        $this->db->update('tagihan', $data);
+		$affect_row = $this->db->affected_rows();
+		if($affect_row > 0){
+			echo 'ok';
+		}else{
+			
 		}
 	}
 	

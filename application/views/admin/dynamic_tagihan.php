@@ -128,14 +128,15 @@
     });
 
     function konfirmasi(val, x, y){
-        if(val.checked){
+        if(val.checked == true){
             alert(val.checked)
+            console.log('true');
             $.ajax({
                 url: "<?php echo site_url() ?>tagihan/update_admin", 
                 method : 'POST',
                 data : {
                     'id' : '' +  x,
-                    'status' : '' + val.checked,
+                    'status' : val.checked,
                     'user_id' : '' + y
                 },
                 success: function(result){
@@ -147,14 +148,20 @@
                     console.log('gagal broh');
                 }
             });
-        }else{
+        }else if(val.checked == false){
             alert(val.checked);
+            let datax = {
+                    'id' : '' +  x,
+                    'status' : val.checked,
+                    'user_id' : '' + y
+            };
+            console.log(datax);
             $.ajax({
-                url: "<?php echo site_url() ?>tagihan/update_admin", 
+                url: "<?php echo site_url() ?>tagihan/update_admin2", 
                 method : 'POST',
                 data : {
                     'id' : '' +  x,
-                    'status' : '' + val.checked,
+                    'status' : val.checked,
                     'user_id' : '' + y
                 },
                 success: function(result){
