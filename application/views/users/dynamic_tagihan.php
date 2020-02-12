@@ -75,12 +75,13 @@
                                                     $i++;
                                                 ?>
                                                 <tr>    
-                                                    <td><?php echo $i;?></td>
+                                                    <td><?php echo $list->id;?></td>
                                                     <td><?php echo convBulan($list->bulan); ?></td>
                                                     <td><?php echo $list->tahun; ?></td>
                                                     <td><?php echo $list->produk_id; ?></td>
                                                     <td><?php echo $list->pembayaran_perbulan; ?></td>
-                                                    <td><?php 
+                                                    <td>
+                                                    <?php 
                                                         if($list->status == "belum"){
                                                             ?>
                                                                 <span style="color:#f0134d;"><b>Belum Dibayar</b></span>
@@ -90,11 +91,23 @@
                                                                 <span style="color:#21bf73;"><b>Sudah Dibayar</b></span>
                                                             <?php
                                                         }
-                                                    ?></td>
+                                                    ?>
+                                                    </td>
                                                     <td>
-                                                        <?php echo form_open_multipart('produk/add'); ?>
-                                                            <input type="file" id="upload_bukti_<?php echo $i;?>">
-                                                        <?php echo form_close();?>
+                                                    <?php 
+                                                        if($list->bukti != ""){
+                                                            ?>
+                                                                <img style="cursor" width="100" src='<?php echo base_url('assets/proof/'.$list->bukti);?>'>
+                                                            <?php
+                                                        }else{
+                                                               ?>  
+                                                               <?php echo form_open_multipart('tagihan/upload_bukti/'.$list->id); ?>
+                                                                   <input type="file" name="upload_image" id="upload_bukti_<?php echo $i;?>" required style="width:210px;">
+                                                                   <input type="submit" class="btn btn-sm btn-primary" name="submit">
+                                                               <?php echo form_close();?>
+                                                            <?php
+                                                        }
+                                                    ?>
                                                     </td>
                                                 </tr>
                                                 

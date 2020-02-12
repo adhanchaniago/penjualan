@@ -22,7 +22,7 @@ class Tagihan extends CI_Controller {
 
 	public function daftar(){
 		$user_id = $this->session->userdata('user_id');
-		$query = "SELECT b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $user_id";
+		$query = "SELECT  b.id, b.bukti, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $user_id";
 		$result = $this->db->query($query)->result();
 		$data['tagihan'] = $result;
  		$this->load->view('users/static_header', $data);
@@ -53,6 +53,29 @@ class Tagihan extends CI_Controller {
 		$this->load->view('admin/static_footer', $data);
 	}
 
+	public function upload_bukti($param){
+		$foto = $_FILES['upload_image'];
+		$image_path = "";
+        $config['upload_path'] = './assets/proof/';
+        $config['allowed_types'] = 'jpg|png|gif';
+        $this->load->library('upload', $config);
+        if(!$this->upload->do_upload('upload_image')){
+          echo 'Gagal upload';
+        }else{
+          $image_path = $this->upload->data('file_name');
+		}
+		$data = array(
+            'bukti' => $image_path,
+		);
+		$this->db->where('id', $param);
+        $this->db->update('tagihan', $data);
+		$affect_row = $this->db->affected_rows();
+		if($affect_row > 0){
+			redirect(base_url("tagihan"));
+		}else{
+
+		}
+	}
 	// public function detail($id){
 	// 	$query = "SELECT * FROM produk where id = $id";
 	// 	$result = $this->db->query($query)->result();
