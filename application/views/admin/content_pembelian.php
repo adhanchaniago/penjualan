@@ -21,6 +21,7 @@
                                 <thead>
                                     <th>No. </th>
                                     <th>Produk</th>
+                                    <th>Pembeli</th>
                                     <th>Tipe</th>
                                     <th>Harga</th>
                                     <th>Luas Tanah (m2)</th>
@@ -37,6 +38,7 @@
                                                     <td><?php echo $i; ?></td>
                                                     <td><?php echo $list->nama; ?></td>
                                                     <td><?php echo $list->tipe; ?></td>
+                                                    <td><?php echo $list->nama_pembeli; ?></td>
                                                     <td><?php echo $list->harga; ?></td>
                                                     <td><?php echo $list->luas_tanah; ?></td>
                                                     <td><?php 

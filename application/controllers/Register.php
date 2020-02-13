@@ -24,10 +24,19 @@ class Register extends CI_Controller {
     }
     
     public function submit_register(){
-        $username = $this->input->post('p_username', TRUE);
-        $nama = $this->input->post('p_nama', TRUE);
-        $email = $this->input->post('p_email', TRUE);
-        $password = $this->input->post('p_password', TRUE);
+      
+      
+      $username = $this->input->post('p_username', TRUE);
+      $nama = $this->input->post('p_nama', TRUE);
+      $email = $this->input->post('p_email', TRUE);
+      $password = $this->input->post('p_password', TRUE);
+      $q_check = "SELECT * FROM users where username = '$username' ";
+      $result = $this->db->query($q_check)->result();
+      $check1 = $this->db->affected_rows() > 0;
+      if(count($result) > 0){
+        $this->session->set_flashdata('message', 'Mohon maaf username sudah terdaftar');
+        redirect(site_url('register'));
+      }else{
         $data = array(
           'username' => ''.$username,
           'email' => ''.$email,
@@ -35,12 +44,14 @@ class Register extends CI_Controller {
           'password' => ''.md5($password),
           'role' => 'common'
         );
-
+  
         $this->db->insert('users', $data);
         $check = $this->db->affected_rows() > 0;
         if($check){
-			$this->session->set_flashdata('message', 'Registrasi Berhasil - Silahkan Login untuk melanjutkan');
-			redirect(base_url('login'));
+          $this->session->set_flashdata('message', 'Registrasi Berhasil - Silahkan Login untuk melanjutkan');
+          redirect(base_url('login'));
         }
+      }
+
       }
     }   

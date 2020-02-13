@@ -10,7 +10,7 @@
               <article class="card-body setpad">
                 <?php
                     if($this->session->flashdata('message')){ ?>
-                        <div class="alert alert-info alert-dismissible"><?php echo $this->session->flashdata('message') ?>
+                        <div class="alert alert-warning alert-dismissible"><?php echo $this->session->flashdata('message') ?>
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         </div>
                         <?php   }
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block" value="Sign In" style="padding-top:15px; padding-bottom:12px;"/>
+                                <input type="submit" class="btn btn-primary btn-block" value="Login" style="padding-top:15px; padding-bottom:12px;"/>
                             </div> <!-- form-group// -->                                                         
                         </div>
                     </div>

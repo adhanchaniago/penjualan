@@ -8,9 +8,9 @@
         <form method="POST" action="<?php echo base_url('register/submit_register'); ?>">
           <div class="card">
               <article class="card-body setpad">
-                <?php
-                    if($this->session->flashdata('error')){ ?>
-                        <div class="alert alert-danger alert-dismissible"><?php echo $this->session->flashdata('error') ?>
+              <?php
+                    if($this->session->flashdata('message')){ ?>
+                        <div class="alert alert-warning alert-dismissible"><?php echo $this->session->flashdata('message') ?>
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         </div>
                         <?php   }
@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block" value="Sign In" style="padding-top:15px; padding-bottom:12px;"/>
+                                <input type="submit" class="btn btn-primary btn-block" value="Register" style="padding-top:15px; padding-bottom:12px;"/>
                             </div>                                                  
                         </div>
                     </div>

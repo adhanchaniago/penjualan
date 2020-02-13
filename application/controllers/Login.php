@@ -62,12 +62,8 @@ class Login extends CI_Controller {
                 $this->session->set_userdata($data_session);	
           redirect(base_url('main'));
         }else{
-          if($username == ''){
-            $this->session->set_flashdata('error', 'Maaf, Login Gagal');
-                    redirect(base_url("login"));
-          }
-          $this->session->set_flashdata('error', 'Maaf, Login Gagal');
-                redirect(base_url("login"));
+          $this->session->set_flashdata('message', 'Maaf, login gagal');
+          redirect(base_url("login"));
         }
       }
 
