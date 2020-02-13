@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-md-12 col-xs-12 w-50">
                 <ul class="breadcrumbs">
                     <li><a href="<?php echo base_url()?>">Beranda</a></li>
-                    <li>Daftar Pembelian</li>
+                    <li>Daftar Penjualan</li>
                 </ul>
             </div>
         </div>
@@ -13,7 +13,7 @@
 <main role="main">
 <div class="album py-5 ">
   <div class="container">
-            <h4>Daftar Pembelian</h4>
+            <h4>Daftar Penjualan</h4>
             <br/>
             <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">

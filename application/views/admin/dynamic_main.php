@@ -2,46 +2,46 @@
 <div class="container">
     <br/>
     <div class="row">
-        <div class="card" style="width:100%;">
-            <h5 class="card-header">Jumlah Pelanggan Terdaftar</h5>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <?php 
-                        if(isset($users)) {
-                            echo sizeof($users);
-                        }
-                    ?>
-                </h5>
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+            <div class="card" style="width:100%;">
+                <h5 class="card-header">Jumlah Pelanggan Terdaftar</h5>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?php 
+                            if(isset($users)) {
+                                echo sizeof($users);
+                            }
+                        ?>
+                    </h5>
+                </div>
             </div>
         </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="card" style="width:100%;">
-            <h5 class="card-header">Jumlah Produk Terdaftar</h5>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <?php 
-                        if(isset($produk)) {
-                            echo sizeof($produk);
-                        }
-                    ?>
-                </h5>
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+            <div class="card" style="width:100%;">
+                <h5 class="card-header">Jumlah Produk Terdaftar</h5>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?php 
+                            if(isset($produk)) {
+                                echo sizeof($produk);
+                            }
+                        ?>
+                    </h5>
+                </div>
             </div>
         </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="card" style="width:100%;">
-            <h5 class="card-header">Jumlah Pembelian</h5>
-            <div class="card-body">
-                <h5 class="card-title">
-                     <?php 
-                        if(isset($pembelian)) {
-                            echo sizeof($pembelian);
-                        }
-                    ?>
-                </h5>
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+            <div class="card" style="width:100%;">
+                <h5 class="card-header">Jumlah Pembelian</h5>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?php 
+                            if(isset($pembelian)) {
+                                echo sizeof($pembelian);
+                            }
+                        ?>
+                    </h5>
+                </div>
             </div>
         </div>
     </div>

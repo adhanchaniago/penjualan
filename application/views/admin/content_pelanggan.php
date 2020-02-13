@@ -60,7 +60,6 @@
                                     <th>No. Telepon</th>
                                     <th>Email</th>
                                     <th>Alamat</th>
-                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($users)) {
@@ -73,7 +72,6 @@
                                                     <td><?php echo $list->telepon; ?></td>
                                                     <td><?php echo $list->email; ?></td>
                                                     <td><?php echo $list->alamat; ?></td>
-                                                    <td><button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;<button type="button" class="btn btn-danger">Delete</button></td>
                                                 </tr>
                                         <?php }
 

@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block btn-success" value="Sign In" style="padding-top:15px; padding-bottom:12px;"/>
+                                <input type="submit" class="btn btn-primary btn-block" value="Sign In" style="padding-top:15px; padding-bottom:12px;"/>
                             </div>                                                  
                         </div>
                     </div>

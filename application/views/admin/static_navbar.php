@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="<?php echo site_url('/assets/nazifalogo.svg');?>"/></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><img src="<?php echo site_url('/assets/nazifalogo_navbar.svg');?>"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +16,13 @@
           <a class="nav-link" href="<?php echo site_url('produk');?>">Produk</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo site_url('daftar_pembelian_admin');?>">Pembelian</a>
+          <a class="nav-link" href="<?php echo site_url('daftar_pembelian_admin');?>">Penjualan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo site_url('jurnal');?>">Jurnal Umum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo site_url('bukubesar');?>">Buku Besar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style="display:none;">Laporan</a>
@@ -24,7 +30,7 @@
     </ul>
     <span>
   
-    Selamat Datang <?php echo $this->session->userdata('username');?></span>&nbsp;&nbsp;&nbsp;<a href="<?php echo site_url('logout');?>"><button class="btn btn-sm btn-outline-success my-2 my-sm-0">Logout</button></a>
+    <span style="color:#ffffff;">Selamat Datang <?php echo $this->session->userdata('username');?></span>&nbsp;&nbsp;&nbsp;<a href="<?php echo site_url('logout');?>"><button class="btn btn-sm btn-outline-light my-2 my-sm-0">Logout</button></a></span>
   </div>
 </nav>
 <style>

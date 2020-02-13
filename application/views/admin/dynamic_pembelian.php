@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-md-12 col-xs-12 w-50">
                 <ul class="breadcrumbs">
                     <li><a href="<?php echo base_url()?>">Beranda</a></li>
-                    <li>Daftar Pembelian</li>
+                    <li>Daftar Penjualan</li>
                 </ul>
             </div>
         </div>

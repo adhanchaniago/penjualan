@@ -88,7 +88,6 @@
                                     <th>Harga</th>
                                     <th>Luas Tanah</th>
                                     <th>Sertifikasi</th>
-                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($produk)) {
@@ -107,7 +106,6 @@
                                                             echo $list->sertifikasi; 
                                                         }
                                                     ?></td>
-                                                    <td><button type="button" class="btn btn-primary">Edit</button>&nbsp;&nbsp;<button type="button" class="btn btn-danger">Delete</button></td>
                                                 </tr>
                                         <?php }
 
