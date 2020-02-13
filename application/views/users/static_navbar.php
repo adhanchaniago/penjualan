@@ -25,7 +25,7 @@
       <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search"> -->
       <?php
         if($this->session->userdata('status') != "login"){?>
-          <a href="<?php echo base_url()?>login"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Masuk</button></a>
+          <a href="<?php echo base_url()?>login"><button class="btn btn-outline-light my-2 my-sm-0" type="submit">Masuk</button></a>
         <?php }else{?>
           <span style="color:#ffffff;">Selamat Datang,&nbsp;
           <span><span style="font-weight:bold;"><?php echo $this->session->userdata('username');?></span></span>&nbsp;&nbsp;&nbsp;
