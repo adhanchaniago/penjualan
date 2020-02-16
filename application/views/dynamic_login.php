@@ -1,4 +1,4 @@
-<div class="section_one" style="margin-top:80px;">
+<div class="section_one" style="margin-top:0px;">
   <div class="container">
   <div class="row justify-content-md-center">
       <div class="col-lg-6 col-md-6 col-xs-12">
