@@ -67,10 +67,6 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="">Foto Gamber</label>
-                            <input type="file" name="upload_image" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
                             <label for="">Sertifikasi</label>
                             <select name="sertifikat" class="custom-select">
                                     <option selected>Pilih Tipe Rumah</option>
