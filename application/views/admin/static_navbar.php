@@ -9,22 +9,22 @@
         <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('main');?>"">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('pelanggan');?>">Pelanggan </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('produk');?>">Produk</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('daftar_pembelian_admin');?>">Penjualan</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('jurnal');?>">Jurnal Umum</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?php echo site_url('bukubesar');?>">Buku Besar</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#" style="display:none;">Laporan</a>
         </li>
     </ul>
