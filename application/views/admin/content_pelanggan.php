@@ -1,3 +1,16 @@
+
+<section class="hero" style="padding-top:20px;padding-bottom:20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12 w-50">
+                <ul class="breadcrumbs">
+                    <li><a href="<?php echo base_url()?>">Beranda</a></li>
+                    <li>Info Pelanggan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 <section style="margin-top:60px; min-height:700px;">
     <div class="container"> 
             <?php echo form_open_multipart('pelanggan/add'); ?>

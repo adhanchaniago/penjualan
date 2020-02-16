@@ -11,7 +11,7 @@
     </div>
 </section>
 <main role="main">
-<div class="album py-5 ">
+<div class="album py-5 "  style="min-height:500px;">
   <div class="container">
             <h4>Daftar Penjualan</h4>
             <br/>
