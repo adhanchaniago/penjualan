@@ -40,7 +40,7 @@ class Produk extends CI_Controller {
         $luas_tanah = $this->input->post('luas_tanah');
 		$sertifikat = $this->input->post('sertifikat');
 		$foto = $_FILES['upload_image'];
-		
+
 		$image_path = "";
         $config['upload_path'] = './assets/produk/';
         $config['allowed_types'] = 'jpg|png|gif';
@@ -58,7 +58,8 @@ class Produk extends CI_Controller {
 			'thumbnail' => $image_path,
 			'lokasi' => 'Kota Palembang',
             'luas_tanah' => $luas_tanah,
-            'sertifikasi' => $sertifikat,
+			'sertifikasi' => $sertifikat,
+			'tanggal_ditambahkan' => date("Y-m-d H:i:s")
           );
       
           $this->db->insert('produk', $data);

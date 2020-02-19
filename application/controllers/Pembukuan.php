@@ -34,6 +34,10 @@ class Pembukuan extends CI_Controller {
             $result2 = $this->db->query($query2)->result();   
             $data['tanggal_akhir'] = $result2;
 
+            $query3 = "SELECT a.pembayaran_perbulan, b.tanggal as tanggal_tagihan,  c.nama,  b.bulan as bulan, b.tahun as tahun FROM pembelian a, tagihan b, produk c WHERE a.produk_id = b.produk_id and b.status = 'bayar' and c.id = a.produk_id ORDER BY bulan";
+            $result3 = $this->db->query($query3)->result();   
+            $data['daftar_jurnal'] = $result3;
+
             $this->load->view('admin/static_header', $data);
             $this->load->view('admin/static_navbar', $data);
             $this->load->view('admin/dynamic_pembukuan', $data);

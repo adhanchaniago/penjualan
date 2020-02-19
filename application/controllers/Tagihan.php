@@ -97,7 +97,8 @@ class Tagihan extends CI_Controller {
 			$send_status = 'belum';
 		}
 		$data = array(
-            'status' => $send_status,
+			'status' => $send_status,
+			'tanggal' => date("Y-m-d H:i:s")
 		);
 		$this->db->where('id', $id);
         $this->db->update('tagihan', $data);
@@ -115,7 +116,8 @@ class Tagihan extends CI_Controller {
 		$status = $this->input->post('status');
 		$user_id = $this->input->post('user_id');
 		$data = array(
-            'status' => 'belum',
+			'status' => 'belum',
+			'tanggal' => date("Y-m-d H:i:s")
 		);
 		$this->db->where('id', $id);
         $this->db->update('tagihan', $data);

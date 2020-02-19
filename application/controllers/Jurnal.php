@@ -30,9 +30,14 @@ class Jurnal extends CI_Controller {
             $result1 = $this->db->query($query1)->result();   
             $data['total_tagihan'] = $result1;
 
-            $query2 = "SELECT b.bulan as bulan, b.tahun as tahun FROM pembelian a, tagihan b WHERE a.produk_id = b.produk_id and b.status = 'bayar' ORDER BY bulan desc limit 1";
+            $query2 = "SELECT b.bulan as bulan, b.tahun as tahun, b.tanggal as tanggal_tagihan FROM pembelian a, tagihan b WHERE a.produk_id = b.produk_id and b.status = 'bayar' ORDER BY bulan desc limit 1";
             $result2 = $this->db->query($query2)->result();   
             $data['tanggal_akhir'] = $result2;
+
+            $query3 = "SELECT a.pembayaran_perbulan, b.tanggal as tanggal_tagihan,  c.nama,  b.bulan as bulan, b.tahun as tahun FROM pembelian a, tagihan b, produk c WHERE a.produk_id = b.produk_id and b.status = 'bayar' and c.id = a.produk_id ORDER BY bulan";
+            $result3 = $this->db->query($query3)->result();   
+            $data['daftar_jurnal'] = $result3;
+
 
             $this->load->view('admin/static_header', $data);
             $this->load->view('admin/static_navbar', $data);

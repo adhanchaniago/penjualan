@@ -26,6 +26,7 @@
                                     <th>Harga</th>
                                     <th>Luas Tanah (m2)</th>
                                     <th>Sertifikasi</th>
+                                    <th>Tanggal Terjual</th>
                                     <th>Tagihan</th>
                                 </thead>
                                 <tbody>
@@ -48,6 +49,7 @@
                                                             echo $list->sertifikasi; 
                                                         }
                                                     ?></td>
+                                                    <td><?php echo $list->tanggal_ditambahkan; ?></td>
                                                     <td><a href="">Lihat Daftar Tagihan</a></td>
                                                 </tr>
                                                 

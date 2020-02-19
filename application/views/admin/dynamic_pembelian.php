@@ -30,16 +30,18 @@
                                     <th>Pembeli</th>
                                     <th>Tipe</th>
                                     <th>Harga</th>
-                                    <th>Luas Tanah (m2)</th>
+                                    <th>Luas (m2)</th>
                                     <th>Sertifikasi</th>
+                                    <th>Tanggal</th>
                                     <th class="hide_table">Tagihan</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($pembelian)) {
-                                        
                                         $i = 1;
+                                        $total_penjualan = 0;
                                         foreach($pembelian as $list) { 
-                                                ?>
+                                            $total_penjualan = $total_penjualan + $list->harga;
+                                            ?>
                                                 <tr>    
                                                     <td><?php echo $i; ?></td>
                                                     <td><?php echo $list->nama; ?></td>
@@ -54,11 +56,42 @@
                                                             echo $list->sertifikasi; 
                                                         }
                                                     ?></td>
+                                                    <td><?php echo $list->tanggal_ditambahkan; ?></td>
                                                     <td class="hide_table"><a href="<?php echo site_url('tagihan/daftar_admin').'/'.$list->user_id.'-'.$list->produk_id;?>">Lihat Daftar Tagihan</a></td>
                                                 
                                         <?php $i++;}
 
                                     }?>
+                                </tbody>
+                                <tbody>
+                                    <tr style="background : #ddd;">
+                                        <td></td>
+                                        <td>Total </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <?php echo $total_penjualan; ?>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>    
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table id="table2" class="table table-striped table-bordered responsive table-hover" width="100%" style="visibility:hidden;">
+                                <thead>
+                                    <th>Produk</th>
+                                    <th>Total Unit Terjual</th>
+                                    <th>Harga Total</th>
+                                </thead>
+                                <tbody>
+                                    <tr style="background : #ddd;">
+                                        <td>Rumah Tipe 36</td>
+                                        <td><?php echo sizeof($pembelian);?></td>
+                                        <td><?php echo $total_penjualan;?></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -74,10 +107,9 @@
               //   unit: 'in',
               //   format: [4, 2]
               // })
-
+               
               // doc.text('Hello world!', 1, 1)
               // doc.save('two-by-four.pdf')
-              $('.hide_table').hide();
               var doc = new jsPDF();
 
               var specialElementHandlers = {
@@ -94,17 +126,27 @@
               //       doc.text("Header", 10, 10);
               //     }
               // });
+
+              var currentdate = new Date(); 
+                var datetime = "" + currentdate.getDate() + "/"
+                                + (currentdate.getMonth()+1)  + "/" 
+                                + currentdate.getFullYear() + " "  
+                                + currentdate.getHours() + ":"  
+                                + currentdate.getMinutes() + ":" 
+                                + currentdate.getSeconds();
               var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
               var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
               let str = "Nazifa Residence";
               let str2 = "Laporan Penjualan";
+              let str3 = "" + datetime;
               // let str2 = "Your footer text";
               doc.setFontSize(12);
               doc.text(str, pageWidth / 2, 10, 'center');
               doc.text(str2, pageWidth / 2, 18, 'center');
-              // doc.text(str2, pageWidth / 2, pageHeight  - 10, 'center');
+              doc.text(str3, pageWidth / 2, 26, 'center');
+            //   doc.text(str3, pageWidth / 2, pageHeight  - 10, 'center');
               doc.autoTable({ 
-                html: '#table1',
+                html: '#table2',
                 margin: {top: 30},
               });
               doc.save('Laporan Penjualan.pdf');

@@ -50,6 +50,9 @@ class Pembelian extends CI_Controller {
 	public function daftar_admin(){
 		$query = "SELECT *, c.fullname as nama_pembeli FROM produk a, pembelian b, users c where a.id = b.produk_id and c.user_id = b.user_id";
 		$result = $this->db->query($query)->result();
+
+		// $query2 = "SELECT * FROM pembelian ORDER BY tanggal_ditambahkan ASC"
+
 		$data['pembelian'] = $result;
  		$this->load->view('admin/static_header', $data);
 		$this->load->view('admin/static_navbar', $data);
@@ -74,6 +77,7 @@ class Pembelian extends CI_Controller {
 			// update product status menjadi terjual
 			$data_produk = array(
 				'status' => 'terjual',
+				'tanggal_ditambahkan' =>  date("Y-m-d H:i:s")
 			);
 			$this->db->where('id', $pembelian_decode->produk_id);
 			$this->db->update('produk', $data_produk);

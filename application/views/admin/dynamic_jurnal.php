@@ -52,6 +52,8 @@
                         case '12' :
                             return 'Desember';
                         break;
+                        case '' : 
+                            return '';
 
                     }
                 }
@@ -82,9 +84,17 @@
                                 <tbody>
                                     <tr>    
                                         <td rowspan="2">
-                                        <?php if(isset($tanggal_akhir)){
-                                            echo convBulan($tanggal_akhir[0]->bulan) .' '. $tanggal_akhir[0]->tahun;
-                                        }?>
+                                        <?php if(isset($tanggal_akhir) && !empty($tanggal_akhir)){
+                                            
+                                            // echo  explode('', $tanggal_akhir[0]->tanggal_tagihan)[0];
+                                            $splitme = explode(' ', $tanggal_akhir[0]->tanggal_tagihan);
+                                            // var_dump($splitme);
+                                            // exit;
+                                            echo $splitme[0];
+                                        }else{
+                                            echo '-';
+                                        }
+                                        ?>
                                         </td>
                                         <td>Kas</td>
                                         <td>
@@ -92,6 +102,8 @@
                                              if(isset($total_tagihan) && isset($total_dp)){
                                                  $totalse = $total_tagihan[0]->total_tagihan + $total_dp[0]->total_dp;
                                                  echo rupiah($totalse);
+                                             }else{
+                                                 echo '-';
                                              }
                                         ?>
                                         </td>
@@ -109,6 +121,28 @@
                                         ?>
                                         </td>
                                     </tr>
+                                    <?php 
+                                      $check2 = isset($daftar_jurnal);
+                                      if($check2){
+                                          foreach($daftar_jurnal as $list){
+                                            $split_date = explode(' ', $list->tanggal_tagihan);
+                                              
+                                              ?>
+                                                  <tr>
+                                                    <td rowspan="2"><?php echo $split_date[0]; ?></td>
+                                                    <td><?php echo $list->nama . '' ;?></td>
+                                                    <td><?php echo rupiah($list->pembayaran_perbulan); ?></td>
+                                                    <td><?php echo '-' ?></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo 'Kas' ; ?></td>
+                                                    <td><?php echo '-'; ?></td>
+                                                    <td><?php 
+                                                    echo rupiah($list->pembayaran_perbulan); ?></td>
+                                                  </tr>
+                                          <?php }?>
+                                      <?php }
+                                  ?>
                                 </tbody>
                             </table>
                         </div>
