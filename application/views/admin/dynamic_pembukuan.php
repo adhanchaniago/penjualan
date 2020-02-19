@@ -116,7 +116,7 @@
                         </tbody>
                 </table> -->
                 <h4>Kas</h4>
-                <table id="table1" class="table table-bordered responsive table-hover" width="100%">
+                <table id="table1" class="table table-bordered responsive table-hover tablepembukuan" width="100%">
                 <thead>
                     <tr style="background-color:#ffffff;">
                         <th>Tanggal</th>
@@ -183,7 +183,7 @@
                 <br/>
                 <br/>
                 <h4>Penjualan</h4>
-                <table id="table3" class="table table-bordered responsive" width="100%">
+                <table id="table3" class="table table-bordered responsive tablepembukuan" width="100%">
                 <thead>
                     <tr style="background-color:#ffffff;">
                         <th>Tanggal</th>
@@ -268,10 +268,14 @@
               doc.text(str, pageWidth / 2, 10, 'center');
               doc.text(str2, pageWidth / 2, 18, 'center');
               // doc.text(str2, pageWidth / 2, pageHeight  - 10, 'center');
-              doc.autoTable({ 
-                html: '#table1',
-                margin: {top: 30},
-              });
+              doc.text("Kas", pageWidth / 2, 55, 'center');
+                var res = doc.autoTableHtmlToJson(document.getElementById('table1'));
+                doc.autoTable(res.columns, res.data, {margin: {top: 65}});
+                doc.text("Penjualan", pageWidth / 2, doc.lastAutoTable.finalY + 15, 'center');
+                var res2 = doc.autoTableHtmlToJson(document.getElementById('table3'));
+                doc.autoTable(res2.columns, res2.data, {
+                    startY: doc.lastAutoTable.finalY + 20
+                });
               doc.save('Laporan Buku Besar.pdf');
               doc.showHead('firstPage');  
         });
