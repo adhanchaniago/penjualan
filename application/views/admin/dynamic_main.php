@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
             <div class="card" style="width:100%;">
-                <h5 class="card-header">Jumlah Pembelian</h5>
+                <h5 class="card-header">Jumlah Penjualan</h5>
                 <div class="card-body">
                     <h5 class="card-title">
                         <?php 
