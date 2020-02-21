@@ -28,7 +28,6 @@
                 }
             ?>
             <div class="row">
-                        <div class="col-lg-12 col-md-12 col-xs-12">
                             <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
                                 <thead>
                                     <th>No. </th>
@@ -36,6 +35,8 @@
                                     <th>Pembeli</th>
                                     <th>Tipe</th>
                                     <th>Harga</th>
+                                    <th>Harga Jual</th>
+                                    <th>Keuntungan</th>
                                     <th>Luas (m2)</th>
                                     <th>Sertifikasi</th>
                                     <th>Tanggal</th>
@@ -54,6 +55,8 @@
                                                     <td><?php echo $list->nama_pembeli; ?></td>
                                                     <td><?php echo $list->tipe; ?></td>
                                                     <td><?php echo rupiah($list->harga); ?></td>
+                                                    <td><?php echo rupiah($list->harga_pokok); ?></td>
+                                                    <td><?php echo rupiah($list->keuntungan); ?></td>
                                                     <td><?php echo $list->luas_tanah; ?></td>
                                                     <td><?php 
                                                         if($list->sertifikasi == ""){
@@ -81,6 +84,8 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>    
                                     </tr>
                                 </tbody>
@@ -100,7 +105,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
             </div>
   </div>
 </div>
