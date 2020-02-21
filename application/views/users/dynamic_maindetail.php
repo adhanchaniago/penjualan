@@ -33,7 +33,10 @@
                     <input class="form-control" value="<?echo $item->harga;?>" type="hidden" name="" id="harga_beli" placeholder="Default input">
                     <small class="text-muted"><?php echo '', $item->lokasi; ?></small>
                     </div>
-                  </div>
+                    <hr/>
+                    <h4>Denah</h4>
+                    <img class="card-img-top" src="<?php echo base_url()?>assets/produk/denah.png" alt="Card image cap">
+                  </div>`
                 </div>
               </div>
               <div class="col-md-4">

@@ -140,7 +140,9 @@
                                             $split_date = explode(' ', $list->tanggal_tagihan);
                                             ?>
                                                 <tr>
-                                                <td><?php 
+                                                <td><?php echo $split_date[0]; ?></td>
+                                                <td><?php echo rupiah($list->pembayaran_perbulan); ?></td>
+                                                    <td><?php 
                                                             if($i > 1){
                                                                 echo ""; 
                                                             }else{
@@ -156,8 +158,6 @@
                                                             }
                                                         ?>
                                                   </td>
-                                                  <td><?php echo $split_date[0]; ?></td>
-                                                  <td><?php echo rupiah($list->pembayaran_perbulan); ?></td>
                                                 </tr>
                                         <?php }?>
                                     <?php }else{
@@ -168,15 +168,18 @@
                                     ?>
                                     <tr style="background-color:#f9f9f9;">   
                                        <td>Total</td>
-                                       <td><?php echo rupiah($totalse); ?></td>
-                                       <td><?php echo rupiah($total_kredit); ?></td>
                                        <td></td>
+                                       <td><?php echo rupiah($total_kredit); ?></td>
+                                       <td><?php echo rupiah($totalse); ?></td>
                                     </tr>
                                     <tr style="background-color:#efefef;">   
                                        <td>Sisa Saldo</td>
-                                       <td colspan=3> <?php 
+                                       <td></td>
+                                       <td></td>
+                                       <td> <?php 
                                            $sisa_saldo = $totalse - $total_kredit;
-                                           echo ''.rupiah($sisa_saldo); ?></td>
+                                           echo ''.rupiah($sisa_saldo); ?>
+                                        </td>
                                     </tr>
                         </tbody>
                 </table>
@@ -203,23 +206,25 @@
                                             $total_penjualan =  $total_penjualan  + $list->pembayaran_perbulan;
                                             ?>
                                                 <tr>
+                                                  <td><?php echo '-'; ?></td>
+                                                  <td><?php echo '-'; ?></td>
                                                   <td><?php echo $list->tanggal_tagihan; ?></td>
                                                   <td><?php echo rupiah($list->pembayaran_perbulan); ?></td>
-                                                  <td><?php echo '-'; ?></td>
-                                                  <td><?php echo '-'; ?></td>
                                                 </tr>
                                         <?php }?>
                                     <?php }
                                  ?>
                                  <tr style="background-color:#f9f9f9;">   
                                     <td>Total</td>
-                                    <td><?php echo rupiah($total_penjualan);?></td>
-                                    <td><?php echo "" ?></td>
                                     <td></td>
+                                    <td><?php echo "" ?></td>
+                                    <td><?php echo rupiah($total_penjualan);?></td>
                                  </tr>
                                  <tr style="background-color:#efefef;">   
                                     <td>Sisa Saldo</td>
-                                    <td colspan=3> 
+                                    <td></td>
+                                    <td></td>
+                                    <td> 
                                             <?php 
                                             $sisa_saldo = $total_penjualan;
                                             echo ''.rupiah($sisa_saldo); ?>

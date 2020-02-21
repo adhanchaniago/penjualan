@@ -36,26 +36,31 @@ class Produk extends CI_Controller {
 	public function add(){
         $nama = $this->input->post('nama');
         $tipe = $this->input->post('tipe');
-        $harga = $this->input->post('harga');
+		$harga = $this->input->post('harga');
+		$harga_pokok = $this->input->post('harga_pokok');
         $luas_tanah = $this->input->post('luas_tanah');
 		$sertifikat = $this->input->post('sertifikat');
 		$foto = $_FILES['upload_image'];
 
-		$image_path = "";
-        $config['upload_path'] = './assets/produk/';
-        $config['allowed_types'] = 'jpg|png|gif';
-        $this->load->library('upload', $config);
-        if(!$this->upload->do_upload('upload_image')){
-          echo 'Gagal upload';
-        }else{
-          $image_path = $this->upload->data('file_name');
-        }
+		$keuntungan = $harga - $harga_pokok;
+
+		// $image_path = "";
+        // $config['upload_path'] = './assets/produk/';
+        // $config['allowed_types'] = 'jpg|png|gif';
+        // $this->load->library('upload', $config);
+        // if(!$this->upload->do_upload('upload_image')){
+        //   echo 'Gagal upload';
+        // }else{
+        //   $image_path = $this->upload->data('file_name');
+        // }
 
         $data = array(
             'nama' => $nama,
             'tipe' => $tipe,
 			'harga' => $harga,
-			'thumbnail' => $image_path,
+			'harga_pokok' => $harga_pokok,
+			'keuntungan' => $keuntungan,
+			'thumbnail' => '',
 			'lokasi' => 'Kota Palembang',
             'luas_tanah' => $luas_tanah,
 			'sertifikasi' => $sertifikat,

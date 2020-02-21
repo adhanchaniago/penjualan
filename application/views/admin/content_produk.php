@@ -27,6 +27,10 @@
                             <?php
                         }
                 ?>
+                <img class="card-img-top" src="<?php echo base_url()?>assets/produk/denah2.png" alt="Card image cap">
+                <br/>
+                <br/>
+                <br/>
                 <h4 class="mb-3">Input Data Produk</h4>
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -41,21 +45,32 @@
                                 <select name="tipe" class="custom-select">
                                     <option selected>Pilih Tipe Rumah</option>
                                     <option value="36">36</option>
-                                    <option value="42">42</option>
-                                    <option value="54">54</option>
+                                    <!-- <option value="42">42</option> -->
+                                    <!-- <option value="54">54</option> -->
                                 </select>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="">Harga</label>
-                            <input type="text" name="harga" class="form-control"  placeholder="" required>
-                            <small class="text-muted">Harga sewaktu-waktu dapat berubah</small>
+                            <label for="">Harga Jual</label>
+                            <input type="number" name="harga" class="form-control"  placeholder="" required>
+                            <small class="text-muted">Harga jual barang</small>
                             <div class="invalid-feedback">
-                            Harga sewaktu-waktu dapat berubah
+                            Harga jual barang
                             </div>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="">Harga Pokok</label>
+                            <input type="number" name="harga_pokok" class="form-control"  placeholder="" required>
+                            <small class="text-muted">Harga pokok / harga dasar </small>
+                            <div class="invalid-feedback">
+                            Harga pokok / harga dasar 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cc-number">Luas Tanah</label>
                             <input type="text" name="luas_tanah" class="form-control" placeholder="" required>
@@ -63,9 +78,6 @@
                             Stok sewaktu-waktu dapat berubah
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="">Sertifikasi</label>
                             <select name="sertifikat" class="custom-select">

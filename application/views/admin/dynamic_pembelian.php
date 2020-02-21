@@ -21,6 +21,12 @@
                 </div>
             </div>
             <br/>
+            <?php 
+                function rupiah($angka){
+                    $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+                    return $hasil_rupiah;
+                }
+            ?>
             <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
@@ -47,7 +53,7 @@
                                                     <td><?php echo $list->nama; ?></td>
                                                     <td><?php echo $list->nama_pembeli; ?></td>
                                                     <td><?php echo $list->tipe; ?></td>
-                                                    <td><?php echo $list->harga; ?></td>
+                                                    <td><?php echo rupiah($list->harga); ?></td>
                                                     <td><?php echo $list->luas_tanah; ?></td>
                                                     <td><?php 
                                                         if($list->sertifikasi == ""){
