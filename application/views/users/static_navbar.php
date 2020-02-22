@@ -6,16 +6,34 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <li class="nav-item
+            <?php 
+                  if($navbar == 'beranda'){
+                    echo 'active';
+                  }
+            ?>
+        ">
           <a class="nav-link" href="<?php echo base_url();?>main">Beranda <span class="sr-only">(current)</span></a>
         </li>
         <?php
           if($this->session->userdata('status') == "login"){
             ?>
-            <li class="nav-item active">
+            <li class="nav-item 
+              <?php 
+                  if($navbar == 'pembelian'){
+                    echo 'active';
+                  }
+              ?>
+            ">
               <a class="nav-link" href="<?php echo site_url('daftar_pembelian')?>">Pembelian<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item 
+                <?php 
+                    if($navbar == 'tagihan'){
+                      echo 'active';
+                    }
+                ?>
+            ">
             <a class="nav-link" href="<?php echo site_url('tagihan')?>">Tagihan<span class="sr-only">(current)</span></a>
             </li>
            <?php 

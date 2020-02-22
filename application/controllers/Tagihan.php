@@ -25,6 +25,7 @@ class Tagihan extends CI_Controller {
 		$query = "SELECT  b.id, b.bukti, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $user_id";
 		$result = $this->db->query($query)->result();
 		$data['tagihan'] = $result;
+		$data['navbar'] = 'tagihan';
  		$this->load->view('users/static_header', $data);
 		$this->load->view('users/static_navbar', $data);
 		$this->load->view('users/dynamic_tagihan', $data);
@@ -48,6 +49,7 @@ class Tagihan extends CI_Controller {
 		$query = "SELECT a.user_id, b.id, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $split[0] and b.produk_id = $split[1]";
 		$result = $this->db->query($query)->result();
 		$data['tagihan'] = $result;
+		$data['navbar'] = 'tagihan';
  		$this->load->view('admin/static_header', $data);
 		$this->load->view('admin/static_navbar', $data);
 		$this->load->view('admin/dynamic_tagihan', $data);

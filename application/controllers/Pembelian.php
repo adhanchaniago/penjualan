@@ -40,6 +40,7 @@ class Pembelian extends CI_Controller {
 		$query = "SELECT * FROM produk a, pembelian b where a.id = b.produk_id and b.user_id = $user_id";
 		$result = $this->db->query($query)->result();
 		$data['pembelian'] = $result;
+		$data['navbar'] = 'pembelian';
  		$this->load->view('users/static_header', $data);
 		$this->load->view('users/static_navbar', $data);
 		$this->load->view('users/dynamic_pembelian', $data);
