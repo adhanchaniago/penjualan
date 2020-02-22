@@ -52,6 +52,7 @@ class Main extends CI_Controller {
 		$query = "SELECT * FROM produk where id = $id";
 		$result = $this->db->query($query)->result();
 		$data['produk'] = $result;
+		$data['navbar'] = 'beranda';
  		$this->load->view('users/static_header', $data);
 		$this->load->view('users/static_navbar', $data);
 		$this->load->view('users/dynamic_maindetail', $data);

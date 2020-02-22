@@ -23,11 +23,13 @@ class Pembelian extends CI_Controller {
 	public function index()
 	{	$check_role = $this->session->userdata('role');
 		if($check_role == "admin"){
+			$data['navbar'] = 'pembelian';
 			$this->load->view('admin/static_header');
 			$this->load->view('admin/static_navbar');
 			$this->load->view('admin/content_pembelian');
 			$this->load->view('admin/static_footer');
 		}else{
+			$data['navbar'] = 'pembelian';
 			$this->load->view('users/static_header');
 			$this->load->view('users/static_navbar');
 			$this->load->view('users/content_pembelian');
