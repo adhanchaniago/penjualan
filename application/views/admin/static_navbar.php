@@ -25,6 +25,9 @@
           <a class="nav-link" href="<?php echo site_url('bukubesar');?>">Buku Besar</a>
         </li>
         <li class="nav-item active">
+          <a class="nav-link" href="<?php echo site_url('labarugi');?>">Laba Rugi</a>
+        </li>
+        <li class="nav-item active">
           <a class="nav-link" href="#" style="display:none;">Laporan</a>
         </li>
     </ul>

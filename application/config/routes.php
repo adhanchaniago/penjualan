@@ -59,6 +59,7 @@ $route['logout'] = 'login/submit_logout';
 $route['register'] = 'register';
 $route['jurnal'] = 'jurnal';
 $route['bukubesar'] = 'pembukuan';
+$route['labarugi'] = 'labarugi';
 $route['404_override'] = '';
 $route['scan'] = 'main/scan';
 $route['assets/(:any)'] = 'assets/$1';
