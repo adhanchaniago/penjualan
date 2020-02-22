@@ -10,7 +10,7 @@
         </div>
     </div>
 </section>
-<section style="margin-top:60px; min-height:700px;">
+<section style="margin-top:30px; min-height:700px;">
     <div class="container"> 
         <?php echo form_open_multipart('produk/add'); ?>
             <div class="row">
