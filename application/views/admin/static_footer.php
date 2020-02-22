@@ -5,4 +5,12 @@
 </html>
 <script>
   feather.replace();  
+  $(document).ready(function(){
+      $('.nav-item').on('click', function(){
+          $(this).addClass('active');
+          $('.nav-item').css({
+            'color' : '#ffcc00'
+          })
+      })
+  });
 </script>

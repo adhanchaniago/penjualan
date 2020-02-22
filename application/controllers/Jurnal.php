@@ -38,7 +38,7 @@ class Jurnal extends CI_Controller {
             $result3 = $this->db->query($query3)->result();   
             $data['daftar_jurnal'] = $result3;
 
-
+            $data['navbar'] = 'jurnal';
             $this->load->view('admin/static_header', $data);
             $this->load->view('admin/static_navbar', $data);
             $this->load->view('admin/dynamic_jurnal', $data);

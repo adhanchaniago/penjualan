@@ -54,6 +54,7 @@ class Pembelian extends CI_Controller {
 		// $query2 = "SELECT * FROM pembelian ORDER BY tanggal_ditambahkan ASC"
 
 		$data['pembelian'] = $result;
+		$data['navbar'] = 'pembelian';
  		$this->load->view('admin/static_header', $data);
 		$this->load->view('admin/static_navbar', $data);
 		$this->load->view('admin/dynamic_pembelian', $data);

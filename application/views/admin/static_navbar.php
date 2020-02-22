@@ -6,28 +6,70 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <li class="nav-item
+        <?php 
+            if($navbar == 'beranda'){
+              echo 'active';
+            }
+        ?>
+        ">
           <a class="nav-link" href="<?php echo site_url('main');?>"">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+        <?php 
+            if($navbar == 'pelanggan'){
+              echo 'active';
+            }
+        ?>"
+        
+        >
           <a class="nav-link" href="<?php echo site_url('pelanggan');?>">Pelanggan </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+         <?php 
+            if($navbar == 'produk'){
+              echo 'active';
+            }
+        ?>">
           <a class="nav-link" href="<?php echo site_url('produk');?>">Produk</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+          <?php 
+              if($navbar == 'pembelian'){
+                echo 'active';
+              }
+          ?>
+        ">
           <a class="nav-link" href="<?php echo site_url('daftar_pembelian_admin');?>">Penjualan</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+          <?php 
+              if($navbar == 'jurnal'){
+                echo 'active';
+              }
+          ?>
+        ">
           <a class="nav-link" href="<?php echo site_url('jurnal');?>">Jurnal Umum</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+          <?php 
+              if($navbar == 'pembukuan'){
+                echo 'active';
+              }
+          ?>
+        ">
           <a class="nav-link" href="<?php echo site_url('bukubesar');?>">Buku Besar</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item 
+            <?php 
+                if($navbar == 'labarugi'){
+                  echo 'active';
+                }
+            ?>
+        ">
           <a class="nav-link" href="<?php echo site_url('labarugi');?>">Laba Rugi</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link" href="#" style="display:none;">Laporan</a>
         </li>
     </ul>

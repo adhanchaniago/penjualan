@@ -25,6 +25,7 @@ class Produk extends CI_Controller {
 			$query = "SELECT * FROM produk where status = 'ready'";
 			$result = $this->db->query($query)->result();
 			$data['produk'] = $result;
+			$data['navbar'] = 'produk';
 			$this->load->view('admin/static_header', $data);
 			$this->load->view('admin/static_navbar', $data);
 			$this->load->view('admin/content_produk', $data);

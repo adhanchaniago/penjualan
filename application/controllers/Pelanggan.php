@@ -28,6 +28,7 @@ class Pelanggan extends CI_Controller {
       $query = "SELECT * FROM users where role !='admin ' ";
       $result = $this->db->query($query)->result();
       $data['users'] = $result;
+      $data['navbar'] = 'pelanggan';
       $this->load->view('admin/static_header', $data);
       $this->load->view('admin/static_navbar', $data);
       $this->load->view('admin/content_pelanggan', $data);

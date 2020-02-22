@@ -31,7 +31,7 @@ class Main extends CI_Controller {
 			$query2 = "SELECT * FROM pembelian";
 			$result2 = $this->db->query($query2)->result();
 			$data['pembelian'] = $result2;
-
+			$data['navbar'] = 'beranda';
 			$this->load->view('admin/static_header', $data);
 			$this->load->view('admin/static_navbar', $data);
 			$this->load->view('admin/dynamic_main', $data);
@@ -40,6 +40,7 @@ class Main extends CI_Controller {
 			$query = "SELECT * FROM produk where status='ready'";
 			$result = $this->db->query($query)->result();
 			$data['produk'] = $result;
+			$data['navbar'] = 'beranda';
 			$this->load->view('users/static_header', $data);
 			$this->load->view('users/static_navbar', $data);
 			$this->load->view('users/dynamic_main', $data);

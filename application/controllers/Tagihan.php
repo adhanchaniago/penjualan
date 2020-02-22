@@ -36,6 +36,7 @@ class Tagihan extends CI_Controller {
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
 		}
+		$data['navbar'] = 'tagihan';
 		$this->load->view('admin/static_header');
 		$this->load->view('admin/static_navbar');
 		$this->load->view('admin/content_pembelian');
@@ -90,7 +91,7 @@ class Tagihan extends CI_Controller {
 		$id = $this->input->post('id');
 		$status = $this->input->post('status');
 		$user_id = $this->input->post('user_id');
-		$send_status;
+		$send_status = '';
 		if($status == true){
 			$send_status = 'bayar';
 		}else{
