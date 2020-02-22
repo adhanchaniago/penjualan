@@ -40,7 +40,7 @@ class Labarugi extends CI_Controller {
 
             // SELECT sum(harga) as total_harga_jual, sum(harga_pokok) as total_harga_pokok from produk
 
-            $query = "SELECT sum(harga) as total_harga_jual, sum(harga_pokok) as total_harga_pokok from produk";
+            $query = "SELECT sum(harga) as total_harga_jual, sum(harga_pokok) as total_harga_pokok from produk where status = 'terjual' ";
             $result = $this->db->query($query)->result();   
             $data['labarugi'] = $result;
             $data['navbar'] = 'labarugi';
