@@ -110,7 +110,12 @@
                 $('#mulai_pembayaran').val('');
                 $('#mulai_pembayaran').val(" Bulan " + month_of_str + " - " + this_year );
             }else{
-                let perbulan = sisa_bayar / get_tenor;
+                let perbulan = Math.abs(sisa_bayar / get_tenor);
+                let checkifcomma = perbulan.toString().includes('.');
+                if(checkifcomma){
+                    perbulan = perbulan.toString().split('.')[0];
+                }
+                $('#bayar_perbulan').val('');
                 $('#bayar_perbulan').val(convertToRupiah(perbulan));
                 $('#bayar_perbulan_value').val(perbulan);
                 $('#mulai_pembayaran').val(" Bulan " + month_of_str + " - " + this_year );
