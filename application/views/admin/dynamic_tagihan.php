@@ -17,13 +17,78 @@
             <h4>Daftar Tagihan  </h4>
             <br/>
             <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">   
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">ProdukId</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->produk_id ?>">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Produk</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->nama ?>">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">   
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Pembeli</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->nama_pembeli ?>">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Tipe</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->tipe ?>">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">   
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Harga</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->harga ?>">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Luas</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->luas_tanah ?>">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">   
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Sertifikasi</label>
+                            <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?php echo $pembelian[0]->sertifikasi ?>">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <hr/>
+            <br/>
+            <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
                                 <thead>
                                     <th>Id</th>
                                     <th>Bulan</th>
                                     <th>Tahun</th>
-                                    <th>Produk Id</th>
                                     <th>Pembayaran</th>
                                     <th>Status</th>
                                     <th>Konfirmasi Pembayaran</th>
@@ -77,7 +142,6 @@
                                                     <td id="id_detail_<?php echo  $list->id;?>"><?php echo $list->id; ?></td>
                                                     <td><?php echo convBulan($list->bulan); ?></td>
                                                     <td><?php echo $list->tahun; ?></td>
-                                                    <td><?php echo $list->produk_id; ?></td>
                                                     <td><?php echo $list->pembayaran_perbulan; ?></td>
                                                     <td><?php 
                                                         if($list->status == "belum"){

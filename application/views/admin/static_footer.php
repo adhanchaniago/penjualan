@@ -1,5 +1,5 @@
 <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="">Contribute by Anggun.</a>
+    <a href="">Contribute by Anggun DPS.</a>
   </div>
 </body>
 </html>

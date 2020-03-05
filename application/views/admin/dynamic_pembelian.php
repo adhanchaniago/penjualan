@@ -27,8 +27,8 @@
                     return $hasil_rupiah;
                 }
             ?>
-            <div class="row">
-                            <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
+              <div class="row">
+                            <table id="table2" class="table table-striped table-bordered responsive table-hover" width="100%">
                                 <thead>
                                     <th>No. </th>
                                     <th>Produk Id</th>
@@ -52,7 +52,89 @@
                                             ?>
                                                 <tr>    
                                                     <td><?php echo $i; ?></td>
-                                                    <td><?php echo date("Y") .$list->id; ?></td>
+                                                    <td><?php echo $list->produk_id; ?></td>
+                                                    <td><?php echo $list->nama; ?></td>
+                                                    <td><?php echo $list->nama_pembeli; ?></td>
+                                                    <td><?php echo $list->tipe; ?></td>
+                                                    <td><?php echo rupiah($list->harga); ?></td>
+                                                    <td><?php echo rupiah($list->harga_pokok); ?></td>
+                                                    <td><?php echo rupiah($list->keuntungan); ?></td>
+                                                    <td><?php echo $list->luas_tanah; ?></td>
+                                                    <td><?php 
+                                                        if($list->sertifikasi == ""){
+                                                            echo '-'; 
+                                                        }else{
+                                                            echo $list->sertifikasi; 
+                                                        }
+                                                    ?></td>
+                                                    <td><?php echo $list->tanggal_ditambahkan; ?></td>
+                                                    <td class="hide_table"><a href="<?php echo site_url('tagihan/daftar_admin').'/'.$list->user_id.'-'.$list->produk_id;?>">Lihat Daftar Tagihan</a></td>
+                                                
+                                        <?php $i++;}
+
+                                    }?>
+                                </tbody>
+                                <tbody>
+                                    <tr style="background : #ddd;">
+                                        <td></td>
+                                        <td>Total </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <?php echo $total_penjualan; ?>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>    
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table id="table2" class="table table-striped table-bordered responsive table-hover" width="100%" style="visibility:hidden;">
+                                <thead>
+                                    <th>Produk</th>
+                                    <th>Total Unit Terjual</th>
+                                    <th>Harga Total</th>
+                                </thead>
+                                <tbody>
+                                    <tr style="background : #ddd;">
+                                        <td>Rumah Tipe 36</td>
+                                        <td><?php echo sizeof($pembelian);?></td>
+                                        <td><?php echo $total_penjualan;?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            </div>
+            <div class="row">
+                            <table id="table1" style="display:none;" class="table table-striped table-bordered responsive table-hover" width="100%">
+                                <thead>
+                                    <th>No. </th>
+                                    <th>Produk Id</th>
+                                    <th>Produk</th>
+                                    <th>Pembeli</th>
+                                    <th>Tipe</th>
+                                    <th>Harga</th>
+                                    <th>Harga Pokok</th>
+                                    <th>Keuntungan</th>
+                                    <th>Luas (m2)</th>
+                                    <th>Sertifikasi</th>
+                                    <th>Tanggal</th>
+                                    <th class="hide_table">Tagihan</th>
+                                </thead>
+                                <tbody>
+                                    <?php if(isset($pembelian)) {
+                                        $i = 1;
+                                        $total_penjualan = 0;
+                                        foreach($pembelian as $list) { 
+                                            $total_penjualan = $total_penjualan + $list->harga;
+                                            ?>
+                                                <tr>    
+                                                    <td><?php echo $i; ?></td>
+                                                    <td><?php echo $list->produk_id; ?></td>
                                                     <td><?php echo $list->nama; ?></td>
                                                     <td><?php echo $list->nama_pembeli; ?></td>
                                                     <td><?php echo $list->tipe; ?></td>
@@ -114,6 +196,7 @@
 </main>
 <script>
     $(document).ready(function(){   
+        $('#table2').DataTable();
         $('#print_pdf').on('click', function(){
               // var doc = new jsPDF({
               //   orientation: 'landscape',
@@ -123,6 +206,7 @@
                
               // doc.text('Hello world!', 1, 1)
               // doc.save('two-by-four.pdf')
+              $('#table1').hide();
               var doc = new jsPDF();
 
               var specialElementHandlers = {

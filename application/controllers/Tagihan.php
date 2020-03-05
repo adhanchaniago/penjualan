@@ -48,7 +48,13 @@ class Tagihan extends CI_Controller {
 		$split = explode('-', $param);
 		$query = "SELECT a.user_id, b.id, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $split[0] and b.produk_id = $split[1]";
 		$result = $this->db->query($query)->result();
+
+		$query2 = "SELECT *, a.id as produk_id, c.fullname as nama_pembeli FROM produk a, pembelian b, users c where a.id = b.produk_id and a.id = $split[1] and c.user_id = b.user_id;";
+		$result2 = $this->db->query($query2)->result();
+
 		$data['tagihan'] = $result;
+		$data['pembelian'] = $result2;
+
 		$data['navbar'] = 'tagihan';
  		$this->load->view('admin/static_header', $data);
 		$this->load->view('admin/static_navbar', $data);

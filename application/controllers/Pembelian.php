@@ -51,7 +51,7 @@ class Pembelian extends CI_Controller {
 
 
 	public function daftar_admin(){
-		$query = "SELECT *, c.fullname as nama_pembeli FROM produk a, pembelian b, users c where a.id = b.produk_id and c.user_id = b.user_id";
+		$query = "SELECT *, a.id as produk_id , c.fullname as nama_pembeli FROM produk a, pembelian b, users c where a.id = b.produk_id and c.user_id = b.user_id";
 		$result = $this->db->query($query)->result();
 
 		// $query2 = "SELECT * FROM pembelian ORDER BY tanggal_ditambahkan ASC"
