@@ -31,6 +31,7 @@
                             <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
                                 <thead>
                                     <th>No. </th>
+                                    <th>Produk Id</th>
                                     <th>Produk</th>
                                     <th>Pembeli</th>
                                     <th>Tipe</th>
@@ -51,6 +52,7 @@
                                             ?>
                                                 <tr>    
                                                     <td><?php echo $i; ?></td>
+                                                    <td><?php echo date("Y") .$list->id; ?></td>
                                                     <td><?php echo $list->nama; ?></td>
                                                     <td><?php echo $list->nama_pembeli; ?></td>
                                                     <td><?php echo $list->tipe; ?></td>
@@ -76,6 +78,7 @@
                                     <tr style="background : #ddd;">
                                         <td></td>
                                         <td>Total </td>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td>
