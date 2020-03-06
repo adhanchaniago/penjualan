@@ -36,6 +36,25 @@ class Main extends CI_Controller {
 			$this->load->view('admin/static_navbar', $data);
 			$this->load->view('admin/dynamic_main', $data);
 			$this->load->view('admin/static_footer', $data);
+		}else if($check_role == 'pimpinan'){
+			$query = "SELECT * FROM users";
+			$result = $this->db->query($query)->result();
+			$data['users'] = $result;
+
+			$query1 = "SELECT * FROM produk";
+			$result1 = $this->db->query($query1)->result();
+			$data['produk'] = $result1;
+
+			$query2 = "SELECT * FROM pembelian";
+			$result2 = $this->db->query($query2)->result();
+			$data['pembelian'] = $result2;
+			$data['navbar'] = 'beranda';
+			$this->load->view('admin/static_header', $data);
+			$this->load->view('admin/static_navbar_pimpinan', $data);
+			$this->load->view('admin/dynamic_main', $data);
+			$this->load->view('admin/static_footer', $data);
+		}else if($check_role == 'superadmin'){
+				redirect('users');
 		}else{
 			$query = "SELECT * FROM produk where status='ready'";
 			$result = $this->db->query($query)->result();

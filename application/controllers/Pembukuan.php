@@ -39,7 +39,12 @@ class Pembukuan extends CI_Controller {
             $data['daftar_jurnal'] = $result3;
             $data['navbar'] = 'pembukuan';
             $this->load->view('admin/static_header', $data);
-            $this->load->view('admin/static_navbar', $data);
+            $check_role = $this->session->userdata('role');
+            if($check_role == 'pimpinan'){
+              $this->load->view('admin/static_navbar_pimpinan.php', $data);
+            }else{
+              $this->load->view('admin/static_navbar', $data);
+            }
             $this->load->view('admin/dynamic_pembukuan', $data);
             $this->load->view('admin/static_footer', $data);
         }

@@ -30,7 +30,12 @@ class Pelanggan extends CI_Controller {
       $data['users'] = $result;
       $data['navbar'] = 'pelanggan';
       $this->load->view('admin/static_header', $data);
-      $this->load->view('admin/static_navbar', $data);
+      $check_role = $this->session->userdata('role');
+      if($check_role == 'pimpinan'){
+        $this->load->view('admin/static_navbar_pimpinan.php', $data);
+      }else{
+        $this->load->view('admin/static_navbar', $data);
+      }
       $this->load->view('admin/content_pelanggan', $data);
       $this->load->view('admin/static_footer', $data);
     }

@@ -28,7 +28,14 @@ class Pembelian extends CI_Controller {
 			$this->load->view('admin/static_navbar');
 			$this->load->view('admin/content_pembelian');
 			$this->load->view('admin/static_footer');
-		}else{
+		}else if($check_role == "pimpinan"){
+			$data['navbar'] = 'pembelian';
+			$this->load->view('users/static_header');
+			$this->load->view('users/static_navbar_pimpinan');
+			$this->load->view('users/content_pembelian');
+			$this->load->view('users/static_footer');
+		}
+		else{
 			$data['navbar'] = 'pembelian';
 			$this->load->view('users/static_header');
 			$this->load->view('users/static_navbar');
@@ -45,6 +52,12 @@ class Pembelian extends CI_Controller {
 		$data['navbar'] = 'pembelian';
  		$this->load->view('users/static_header', $data);
 		$this->load->view('users/static_navbar', $data);
+		$check_role = $this->session->userdata('role');
+		if($check_role == 'pimpinan'){
+		  $this->load->view('admin/static_navbar_pimpinan.php', $data);
+		}else{
+		  $this->load->view('admin/static_navbar', $data);
+		}
 		$this->load->view('users/dynamic_pembelian', $data);
 		$this->load->view('users/static_footer', $data);
 	}
@@ -59,7 +72,12 @@ class Pembelian extends CI_Controller {
 		$data['pembelian'] = $result;
 		$data['navbar'] = 'pembelian';
  		$this->load->view('admin/static_header', $data);
-		$this->load->view('admin/static_navbar', $data);
+		 $check_role = $this->session->userdata('role');
+		 if($check_role == 'pimpinan'){
+		   $this->load->view('admin/static_navbar_pimpinan.php', $data);
+		 }else{
+		   $this->load->view('admin/static_navbar', $data);
+		 }
 		$this->load->view('admin/dynamic_pembelian', $data);
 		$this->load->view('admin/static_footer', $data);
 	}
