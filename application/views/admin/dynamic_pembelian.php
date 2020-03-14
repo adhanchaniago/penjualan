@@ -35,7 +35,7 @@
                                     <th>Produk</th>
                                     <th>Pembeli</th>
                                     <th>Tipe</th>
-                                    <th>Harga</th>
+                                    <th>Harga Jual</th>
                                     <th>Harga Pokok</th>
                                     <th>Keuntungan</th>
                                     <th>Luas (m2)</th>
