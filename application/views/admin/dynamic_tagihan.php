@@ -288,6 +288,7 @@
                             docs.text(10, 40, '' + c);
                             docs.text(10, 90, 'Terimakasih.');
                             docs.save('hello_world.pdf');
+                            hideme();
                             // docs.output('blob');
                             // var data = new FormData();
                             // data.append('upload_image' , docs);
