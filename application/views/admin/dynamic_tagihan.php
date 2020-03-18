@@ -282,13 +282,14 @@
                         if(result == 'ok'){
                             hideme();
                             var docs = new jsPDF('p', 'mm', [297, 210]);
+                            let datetime = new Date().toLocaleString();
                             docs.setFontSize(9);
                             docs.text(10, 20, 'Kwitansi Pembayaran');
                             docs.text(10, 30, '' + a);
                             docs.text(10, 35, '' + b);
                             docs.text(10, 40, '' + c);
                             docs.text(10, 90, 'Terimakasih.');
-                            docs.save('hello_world.pdf');
+                            docs.save('kwitansi_'+datetime+'.pdf');
                             location.reload();
                             // docs.output('blob');
                             // var data = new FormData();
