@@ -66,3 +66,4 @@ $route['404_override'] = '';
 $route['scan'] = 'main/scan';
 $route['assets/(:any)'] = 'assets/$1';
 $route['translate_uri_dashes'] = FALSE;
+$route['upload_kwitansi'] = 'tagihan/upload_kwitansi';

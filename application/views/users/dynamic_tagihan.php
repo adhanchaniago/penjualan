@@ -20,8 +20,7 @@
                             <table id="table1" class="table table-striped table-bordered responsive table-hover" width="100%">
                                 <thead>
                                     <th>No</th>
-                                    <th>Bulan</th>
-                                    <th>Tahun</th>
+                                    <th>Tanggal jatuh tempo</th>
                                     <th>Produk Id</th>
                                     <th>Pembayaran</th>
                                     <th>Status</th>
@@ -77,8 +76,7 @@
                                                 ?>
                                                 <tr>    
                                                     <td><?php echo $list->id;?></td>
-                                                    <td><?php echo convBulan($list->bulan); ?></td>
-                                                    <td><?php echo $list->tahun; ?></td>
+                                                    <td><?php echo '20 ' .convBulan($list->bulan).' '.$list->tahun ?></td>
                                                     <td><?php echo $list->produk_id; ?></td>
                                                     <td><?php echo $list->pembayaran_perbulan; ?></td>
                                                     <td>

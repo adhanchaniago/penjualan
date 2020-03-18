@@ -11,6 +11,6 @@
           $('.nav-item').css({
             'color' : '#ffcc00'
           })
-      })
+      });
   });
 </script>

@@ -46,7 +46,7 @@ class Tagihan extends CI_Controller {
 
 	public function daftar_admin($param){
 		$split = explode('-', $param);
-		$query = "SELECT a.user_id, b.id, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $split[0] and b.produk_id = $split[1]";
+		$query = "SELECT a.user_id, b.id, b.bukti, b.produk_id, b.bulan, b.tahun, b.tanggal, b.status, a.pembayaran_perbulan FROM pembelian a, tagihan b where a.user_id = b.user_id and a.produk_id = b.produk_id and b.user_id = $split[0] and b.produk_id = $split[1]";
 		$result = $this->db->query($query)->result();
 
 		$query2 = "SELECT *, a.id as produk_id, c.fullname as nama_pembeli FROM produk a, pembelian b, users c where a.id = b.produk_id and a.id = $split[1] and c.user_id = b.user_id;";
@@ -66,7 +66,7 @@ class Tagihan extends CI_Controller {
 		$foto = $_FILES['upload_image'];
 		$image_path = "";
         $config['upload_path'] = './assets/proof/';
-        $config['allowed_types'] = 'jpg|png|gif';
+        $config['allowed_types'] = 'jpg|png|gif|pdf';
         $this->load->library('upload', $config);
         if(!$this->upload->do_upload('upload_image')){
           echo 'Gagal upload';
@@ -85,15 +85,22 @@ class Tagihan extends CI_Controller {
 
 		}
 	}
-	// public function detail($id){
-	// 	$query = "SELECT * FROM produk where id = $id";
-	// 	$result = $this->db->query($query)->result();
-	// 	$data['produk'] = $result;
- 	// 	$this->load->view('users/static_header', $data);
-	// 	$this->load->view('users/static_navbar', $data);
-	// 	$this->load->view('users/dynamic_maindetail', $data);
-	// 	$this->load->view('users/static_footer', $data);
-	// }
+
+	public function upload_bukti2(){
+        $config['upload_path'] = './assets/proof/';
+        $config['allowed_types'] = 'jpg|png|gif|pdf';
+		$this->load->library('upload', $config);
+        if(!$this->upload->do_upload('upload_image')){
+			return json_encode('gagal');
+        }else{
+			header('Content-Type: application/json');
+			$data = array(
+				'status' => 'berhasil'
+			);
+			return json_encode($data);
+		}
+	}
+
 
 	public function update_admin(){
 		$id = $this->input->post('id');
@@ -126,7 +133,7 @@ class Tagihan extends CI_Controller {
 		$user_id = $this->input->post('user_id');
 		$data = array(
 			'status' => 'belum',
-			'tanggal' => date("Y-m-d H:i:s")
+			'tanggal' => '0000-00-00 00:00:00'
 		);
 		$this->db->where('id', $id);
         $this->db->update('tagihan', $data);
