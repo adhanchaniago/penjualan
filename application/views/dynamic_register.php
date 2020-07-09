@@ -15,7 +15,7 @@
                         </div>
                         <?php   }
                 ?>
-                <p class="lead"><? ?></p>
+                <p class="lead"></p>
                     <div class="form-group">
                       <label>Nama</label>
                         <input name="p_nama" class="form-control" placeholder="Nama" type="text" required>
