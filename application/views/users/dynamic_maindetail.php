@@ -43,6 +43,9 @@
                 <div class="card mb-4 box-shadow">
                   <div class="card-body">
                         <div class="form-group">
+                            <h4><strong>Sumulasi Kredit</strong></h4>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleFormControlSelect1">Down Payment 30%</label>
                             <?php
                                 $dp = 0.3 * $item->harga; 
