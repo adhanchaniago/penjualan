@@ -24,7 +24,7 @@
                                     <th>Tipe</th>
                                     <th>Harga</th>
                                     <th>Luas Tanah (m2)</th>
-                                    <th>Sertifikasi</th>
+                                    <th>Sertifikat</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($pembelian)) {

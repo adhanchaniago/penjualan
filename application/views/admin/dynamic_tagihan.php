@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-12">   
                         <div class="form-group row">
-                            <label for="staticEmail" class="col-sm-2 col-form-label">Sertifikasi</label>
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Sertifikat</label>
                             <div class="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext"  value="<?php echo $pembelian[0]->sertifikasi ?>">
                             </div>

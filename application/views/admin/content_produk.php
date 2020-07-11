@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="">Sertifikasi</label>
+                            <label for="">Sertifikat</label>
                             <select name="sertifikat" class="custom-select">
                                     <option selected>Pilih Tipe Rumah</option>
                                     <option value="SHM">SHM</option>

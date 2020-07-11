@@ -34,7 +34,7 @@
                     <small class="text-muted"><?php echo '', $item->lokasi; ?></small>
                     </div>
                     <hr/>
-                    <h4>Denah</h4>
+                    <h4>SitePlan</h4>
                     <img class="card-img-top" src="<?php echo base_url()?>assets/produk/denah.png" alt="Card image cap">
                   </div>`
                 </div>
@@ -81,7 +81,7 @@
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item">Luas tanah : <?php echo $item->luas_tanah .' m2' ;?></li>
-                    <li class="list-group-item">Sertifikasi : <?php echo $item->sertifikasi;?></li>
+                    <li class="list-group-item">Sertifikat : <?php echo $item->sertifikasi;?></li>
                     <li class="list-group-item">Waktu ditambahkan : <?php echo $item->tanggal_ditambahkan?></li>
                 </ul>
               </div>
