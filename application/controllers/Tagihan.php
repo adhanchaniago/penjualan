@@ -71,7 +71,7 @@ class Tagihan extends CI_Controller {
 		$foto = $_FILES['upload_image'];
 		$image_path = "";
         $config['upload_path'] = './assets/proof/';
-        $config['allowed_types'] = 'jpg|png|gif|pdf';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf';
         $this->load->library('upload', $config);
         if(!$this->upload->do_upload('upload_image')){
           echo 'Gagal upload';
@@ -93,7 +93,7 @@ class Tagihan extends CI_Controller {
 
 	public function upload_bukti2(){
         $config['upload_path'] = './assets/proof/';
-        $config['allowed_types'] = 'jpg|png|gif|pdf';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif|pdf';
 		$this->load->library('upload', $config);
         if(!$this->upload->do_upload('upload_image')){
 			return json_encode('gagal');
