@@ -58,10 +58,11 @@ class Tagihan extends CI_Controller {
 		$data['navbar'] = 'tagihan';
 		$check_role = $this->session->userdata('role');
 		if($check_role == 'pimipinan'){
-			
+			$this->load->view('admin/static_navbar_pimpinan', $data);
+		}else{
+			$this->load->view('admin/static_navbar', $data);
 		}
  		$this->load->view('admin/static_header', $data);
-		$this->load->view('admin/static_navbar_pimpinan', $data);
 		$this->load->view('admin/dynamic_tagihan', $data);
 		$this->load->view('admin/static_footer', $data);
 	}
